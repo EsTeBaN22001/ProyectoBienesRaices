@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes Raices</title>
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="/build/css/app.css">
 </head>
 <body>
     
@@ -14,21 +14,21 @@
             <div class="barra">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="build/img/logo.svg" alt="Logotipo de bienes raices">
+                        <img src="/build/img/logo.svg" alt="Logotipo de bienes raices">
                     </a>
                 </div>
     
                 <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="Icono de menu responsive">
+                    <img src="/build/img/barras.svg" alt="Icono de menu responsive">
                 </div>
     
                 <div class="derecha">
-                    <img src="build/img/dark-mode.svg" alt="Icono de Dark Mode" class="dark-mode-boton">
+                    <img src="/build/img/dark-mode.svg" alt="Icono de Dark Mode" class="dark-mode-boton">
                     <nav class="navegacion">
-                        <a href="nosotros.php">Nosotros</a>
-                        <a href="anuncios.php">Anuncios</a>
-                        <a href="blog.php">Blog</a>
-                        <a href="contacto.php">Contacto</a>
+                        <a href="/nosotros.php">Nosotros</a>
+                        <a href="/anuncios.php">Anuncios</a>
+                        <a href="/blog.php">Blog</a>
+                        <a href="/contacto.php">Contacto</a>
                     </nav>
                 </div>
             </div>
