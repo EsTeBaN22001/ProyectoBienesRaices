@@ -1,39 +1,26 @@
 <?php
 
-    // Validar el Id
-    $id = $_GET['id'];
-    $id = filter_var($id, FILTER_VALIDATE_INT);
-
-    if(!$id){
-        header('location: /');
-    }
-
     // Importar la base de datos
-    include 'includes/config/database.php';
+    include __DIR__ . '/../config/database.php';
     $db = conectarDB();
 
     // Consultar la BD
-    $query = "SELECT * FROM propiedades WHERE id=${id}";
+    $query = "SELECT * FROM propiedades LIMIT ${limite}";
 
     // Obtener resultados
     $resultado = mysqli_query($db, $query);
 
-    if(!$resultado-> num_rows){
-        header('location: /');
-    }
-
-    $propiedad = mysqli_fetch_assoc($resultado);
-
-    require 'includes/funciones.php';
-    incluirTemplate('header');
 ?>
 
-    <main class="contenedor seccion contenido-centrado">
-        <h1><?php echo $propiedad['titulo']; ?></h1>
+<div class="contenedor-anuncios">
+    <?php while($propiedad = mysqli_fetch_assoc($resultado)): ?>
+    
+    <div class="anuncio">
+        <img loading="lazy" src="/imagenes/<?php echo $propiedad['imagen']; ?>" alt="anuncio">
 
-            <img class="img-w-85" lazy ="loading" src="/imagenes/<?php echo $propiedad['imagen']; ?>" alt="Imagen de la propiedad">
-
-        <div class="resumen-propiedad">
+        <div class="contenido-anuncio">
+            <h3><?php echo $propiedad['titulo']; ?></h3>
+            <p><?php echo $propiedad['descripcion']; ?></p>
             <p class="precio"><?php echo "$" . $propiedad['precio']; ?></p>
 
             <ul class="iconos-caracteristicas">
@@ -51,12 +38,14 @@
                 </li>
             </ul>
 
-            <p><?php echo $propiedad['descripcion']; ?></p>
+            <a href="anuncio.php?id=<?php echo $propiedad['id']; ?>" class="boton-naranja-block">Ver propiedad</a>
         </div>
-    </main>
+    </div>
+    <?php endwhile; ?>
+</div>
 
-<?php 
+<?php
 
+    // Cerrar la conexión
     mysqli_close($db);
-    incluirTemplate('footer');     
 ?>

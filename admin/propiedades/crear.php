@@ -1,8 +1,16 @@
 <?php
+    // Autenticación de usuario
+    require '../../includes/funciones.php';
+    $auth = estaAutenticado();
+
+    if(!$auth){
+        header('Location: /');
+    }
+
+
     // Base de datos
     require '../../includes/config/database.php';
     $db = conectarDB();
-    // $db -> set_charset('utf8_decode');
 
     // Consultar para obtener vendedores
     $consulta = "SELECT * FROM vendedores";
@@ -108,7 +116,7 @@
             
             if($resultado1){
                 // Redireccionar al usuario
-                header('Location: /admin?mensaje=resultado=1');
+                header('Location: /admin?resultado=1');
             }
         }
     }
