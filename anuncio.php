@@ -1,4 +1,5 @@
 <?php
+include 'includes/app.php';
 
     // Validar el Id
     $id = $_GET['id'];
@@ -9,7 +10,6 @@
     }
 
     // Importar la base de datos
-    include 'includes/config/database.php';
     $db = conectarDB();
 
     // Consultar la BD
@@ -24,7 +24,6 @@
 
     $propiedad = mysqli_fetch_assoc($resultado);
 
-    require 'includes/funciones.php';
     incluirTemplate('header');
 ?>
 

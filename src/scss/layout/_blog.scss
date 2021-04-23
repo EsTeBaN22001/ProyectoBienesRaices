@@ -1,0 +1,53 @@
+.blog{
+    @include tablet{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+    }
+
+    .contenedor-blog{
+        h3{
+            margin-top: 0;
+        }
+    }
+}
+
+.entrada-blog{
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.texto-entrada{
+    a{
+        color: $negro;
+    }
+
+    h4{
+        margin: 0;
+        line-height: 1.4;
+
+        &::after{
+            content: '';
+            display: block;
+            width: 15rem;
+            height: .5rem;
+            background: $verde;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.informacion-meta{
+    span{
+        color: $naranja;
+        font-weight: $bold;
+    }
+}

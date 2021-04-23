@@ -1,6 +1,6 @@
 <?php
+    require 'includes/app.php';
     // Importar la conexión de la base de datos
-    require 'includes/config/database.php';
     $db = conectarDB();
 
     // Creación de arreglo para los errores de la autenticación
@@ -61,7 +61,6 @@
 
 
     // Incluye el template de Header
-    require 'includes/funciones.php';
     incluirTemplate('header');
 ?>
 

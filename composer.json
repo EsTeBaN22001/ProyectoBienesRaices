@@ -1,0 +1,19 @@
+{
+    "name": "esteb/bienesraices",
+    "description": "Creando un proyecto con POO",
+    "type": "proyect",
+    "authors": [
+        {
+            "name": "Esteban",
+            "email": "esteban1.redon2@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./classes"
+        }
+    }
+}

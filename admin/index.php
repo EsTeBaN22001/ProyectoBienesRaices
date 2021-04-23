@@ -1,6 +1,6 @@
 <?php
     // Autenticación de usuario
-    require '../includes/funciones.php';
+    require '../includes/app.php';
     $auth = estaAutenticado();
 
     if(!$auth){
@@ -9,7 +9,6 @@
 
 
     // Importar la base de datos
-    require '../includes/config/database.php';
     $db = conectarDB();
     
     // Escribir el query
