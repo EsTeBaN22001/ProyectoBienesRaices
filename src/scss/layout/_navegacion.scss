@@ -2,9 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     @include tablet{
+        .dark-mode-boton{
+            margin: 2.5rem 0 0 0;
+        }
+    }
+    
+    @include pantalla-int{
         flex-direction: row;
+        
+        .dark-mode-boton{
+            padding-top: 2.5rem;
+        }
     }
 }
 
@@ -25,11 +35,9 @@
     padding-top: 2.5rem;
 
     @include tablet{
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
     }
-    
-    
 }
 
 .navegacion{
@@ -43,6 +51,7 @@
         align-items: center;
         opacity: 1;
         visibility: visible;
+        margin: 5rem 0 0 0;
     }
 
     a{
@@ -54,10 +63,28 @@
         padding: 1.2rem 2.7rem;
         transition: .3s ease all;
         transition-delay: 0s;
+        
 
         &:hover{
             color: $verde;
             background: rgba(109, 109, 109, 0.44);
+        }
+    }
+    .cerrar-sesion{
+        background-color: $rojo;
+        
+        &:hover{
+            color: $blanco;
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+    }
+
+    .iniciar-sesion{
+        background-color: $verde;
+        
+        &:hover{
+            color: $blanco;
+            background-color: #70b10096;
         }
     }
 }

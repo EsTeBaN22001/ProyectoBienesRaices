@@ -10,7 +10,13 @@
         @content;
     }
 }
-  
+
+@mixin pantalla-int{
+    @media (min-width : #{$pantalla-int}){
+        @content;
+    }
+}
+
 @mixin desktop {
     @media (min-width: #{$desktop}) {
         @content;

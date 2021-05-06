@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
-
     eventListeners();
 
     darkMode();
+
+    preloader();
+
+
 })
 
 function eventListeners(){
@@ -35,4 +38,10 @@ function darkMode(){
     btnDarkMode.addEventListener('click', function(){
         document.body.classList.toggle('dark-mode')
     })
+}
+
+function preloader(){
+    const contenedorCarga = document.querySelector('.contenedor-carga');
+
+    contenedorCarga.classList.add('hidden');
 }
