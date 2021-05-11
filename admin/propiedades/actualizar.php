@@ -5,11 +5,7 @@
 
     // Autenticación de usuario
     require '../../includes/app.php';
-    $auth = estaAutenticado();
-
-    if(!$auth){
-        header('Location: /');
-    }
+    estaAutenticado();
 
     // Validación y sanitización de la URL por Id válido
     $id = $_GET['id'];
@@ -38,8 +34,8 @@
 
         // Asignar los atributos
         $args = $_POST['propiedad'];
-
         
+        // Sincronizar los atributos de la propiedad
         $propiedad->sincronizar($args);
         
         // Subida de archivos

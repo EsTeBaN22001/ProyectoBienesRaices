@@ -5,11 +5,7 @@
     use Intervention\Image\ImageManagerStatic as Image;
 
     // Autenticación de usuario
-    $auth = estaAutenticado();
-
-    if(!$auth){
-        header('Location: /');
-    }
+    estaAutenticado();
 
     // Base de datos
     $db = conectarDB();
@@ -23,7 +19,6 @@
 
     // Arreglo con mensajes de errores
     $errores = Propiedad::getErrores();
-
 
     // Ejecutar el código despues de que el usuario envia el formulario
     if($_SERVER['REQUEST_METHOD'] === 'POST'){

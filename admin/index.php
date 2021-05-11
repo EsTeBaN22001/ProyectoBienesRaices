@@ -1,14 +1,9 @@
 <?php
     // Autenticación de usuario
     require '../includes/app.php';
-    $auth = estaAutenticado();
+    estaAutenticado();
 
     use App\Propiedad;
-
-    if(!$auth){
-        header('Location: /');
-    }
-    
 
     // Implementar un método para obterer todas las propiedades
     $propiedades = Propiedad::all();
