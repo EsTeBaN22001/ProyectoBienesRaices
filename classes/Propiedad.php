@@ -30,7 +30,7 @@ class Propiedad{
     public function __construct($args = [])
     {
 
-        $this->id = $args['id'] ?? '';
+        $this->id = $args['id'] ?? null;
         $this->titulo = $args['titulo'] ?? '';
         $this->precio = $args['precio'] ?? '';
         $this->imagen = $args['imagen'] ?? '';
@@ -40,6 +40,15 @@ class Propiedad{
         $this->estacionamiento = $args['estacionamiento'] ?? '';
         $this->creado = date('Y/m/d');
         $this->vendedorId = $args['vendedorId'] ?? '1';
+    }
+
+    public function guardar(){
+        if(!is_null($this->id)){
+            // Actualizar propiedad
+            $this->actualizar();
+        }else{
+            $this->crear();
+        }
     }
 
     // Crear una propiedad
@@ -77,7 +86,6 @@ class Propiedad{
         $query .= join(', ', $valores );
         $query .= " WHERE id = '" . self::$db->escape_string($this->id). "' ";
         $query .= " LIMIT 1 ";
-        // debugear($query);
 
         $resultado = self::$db->query($query);
 
@@ -133,7 +141,7 @@ class Propiedad{
 
     // Eliminar imagen
     public function borrarImagen(){
-        if(isset($this->id)){
+        if(!is_null($this->id)){
             // Comprobar si existe el archivo
             $existeArchivo= file_exists(CARPETA_IMAGENES . $this->imagen);
 

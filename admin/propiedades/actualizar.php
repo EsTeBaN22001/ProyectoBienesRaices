@@ -56,7 +56,7 @@
                 if ($_FILES['propiedad']['tmp_name']['imagen']){
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                 }
-                $propiedad->actualizar();
+                $propiedad->guardar();
             }
     }
 

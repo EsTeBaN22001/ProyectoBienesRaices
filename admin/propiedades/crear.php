@@ -52,7 +52,7 @@
             $image->save(CARPETA_IMAGENES . $nombreImagen);
             
             // Guardar en la base de datos
-            $propiedad->crear();
+            $propiedad->guardar();
         }
     }
     incluirTemplate('header');
