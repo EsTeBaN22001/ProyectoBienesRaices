@@ -58,6 +58,14 @@
     incluirTemplate('header');
 ?>
 
+<?php if($admin = true){?>
+
+    <div class="contenedor-carga">
+        <div class="carga"></div>
+    </div>
+
+<?php }?>
+
     <main class="contenedor seccion">
         <h1>Crear</h1>
 

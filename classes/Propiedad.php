@@ -42,6 +42,7 @@ class Propiedad{
         $this->vendedorId = $args['vendedorId'] ?? '1';
     }
 
+    // Crear una propiedad
     public function crear(){
         // Sanitizar los datos
         $datos = $this->sanitizarDatos();
@@ -61,7 +62,7 @@ class Propiedad{
             header('Location: /admin?resultado=1');
         }
     }
-
+    // Actualizar una propiedad
     public function actualizar(){
         // Sanitizar los datos
         $datos = $this->sanitizarDatos();
@@ -84,6 +85,18 @@ class Propiedad{
         if($resultado){
             // Redireccionar al usuario
             header('Location: /admin?resultado=2');
+        }
+    }
+
+    // Eliminar una propiedad
+    public function eliminar(){
+        // Elimina la propiedad
+        $query = "DELETE FROM propiedades WHERE id= " . self::$db->escape_string($this->id) . " LIMIT 1" ;
+        $resultado = self::$db->query($query);
+
+        if($resultado){
+            $this->borrarImagen();
+            header('location: /admin?resultado=3');
         }
     }
 
@@ -110,6 +123,16 @@ class Propiedad{
     // Subida de archivos
     public function setImagen($imagen){
         // Elimina la imagen previa
+        $this->borrarImagen();
+
+        // Asignar al atributo de imagen el nombre de la imagen
+        if($imagen){
+            $this->imagen = $imagen;
+        }
+    }
+
+    // Eliminar imagen
+    public function borrarImagen(){
         if(isset($this->id)){
             // Comprobar si existe el archivo
             $existeArchivo= file_exists(CARPETA_IMAGENES . $this->imagen);
@@ -117,11 +140,6 @@ class Propiedad{
             if($existeArchivo){
                 unlink(CARPETA_IMAGENES . $this->imagen);
             }
-        }
-
-        // Asignar al atributo de imagen el nombre de la imagen
-        if($imagen){
-            $this->imagen = $imagen;
         }
     }
 
