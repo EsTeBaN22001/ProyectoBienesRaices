@@ -64,7 +64,7 @@
 
     <label for="vendedor">Vendedor</label>
     <select name="propiedad[vendedorId]" id="vendedor">
-    <option disabled selected>--> Seleccione un vendedor <--</option>
+    <option selected disabled>--> Seleccione un vendedor <--</option>
         <?php foreach($vendedores as $vendedor):?>
             <option <?php echo $propiedad->vendedorId === $vendedor-> id ? 'selected' : '' ; ?>
             value="<?php echo san($vendedor->id)?>"> <?php echo san($vendedor->nombre) . " " . san($vendedor->apellido); ?> </option>

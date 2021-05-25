@@ -64,7 +64,7 @@
 <?php }?>
 
     <main class="contenedor seccion">
-        <h1>Crear</h1>
+        <h1 class="m-0 mt-4">Crear</h1>
 
         <a href="/admin" class="boton boton-verde">Volver</a>
 

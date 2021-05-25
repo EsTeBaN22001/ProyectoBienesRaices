@@ -1,6 +1,7 @@
 <?php
 
     use App\Propiedad;
+    use App\Vendedor;
     use Intervention\Image\ImageManagerStatic as Image;
 
     // Autenticación de usuario
@@ -15,15 +16,11 @@
         header('location: /admin');
     }
 
-    // Base de datos
-    $db = conectarDB();
-
     // Obtener los datos de la propiedad
     $propiedad = Propiedad::find($id);
 
-    // Consultar para obtener vendedores
-    $consulta = "SELECT * FROM vendedores";
-    $resultado = mysqli_query($db, $consulta);
+    // Consulta para obtener todos los vendedores
+    $vendedores = Vendedor::all();
 
     // Arreglo con mensajes de errores
     $errores = Propiedad::getErrores();
@@ -72,7 +69,7 @@
 <?php }?>
 
     <main class="contenedor seccion">
-        <h1>Actualizar propiedad</h1>
+        <h1 class="m-0 mt-4">Actualizar propiedad</h1>
 
         <a href="/admin" class="boton boton-verde">Volver</a>
 

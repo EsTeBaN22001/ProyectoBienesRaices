@@ -18,3 +18,7 @@
     @include boton($rojo, block);
     width: 100%;
 }
+
+.boton-rojo{
+    @include boton($rojo, inline-block);
+}
