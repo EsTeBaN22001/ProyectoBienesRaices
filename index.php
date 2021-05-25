@@ -32,8 +32,7 @@
     <section class="seccion contenedor">
         <h2>Casas y departamentos en venta</h2>
 
-        <?php 
-            $limite = 3;
+        <?php
             include 'includes/templates/anuncios.php';
         ?>
         
