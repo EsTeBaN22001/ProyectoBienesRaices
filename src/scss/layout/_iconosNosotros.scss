@@ -1,0 +1,29 @@
+.iconos-nosotros{
+    @include tablet{
+        @include grid(3, 2rem);
+    }
+    
+    
+    .icono{
+        text-align: center;
+        margin: $separacion/4 $separacion/6;
+        padding: $separacion/3;
+        // Box Shadow
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(158, 158, 158, 0.75);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(158, 158, 158, 0.75);
+        box-shadow: 0px 0px 10px 0px rgba(158, 158, 158, 0.75);
+        // 
+
+
+        img{
+            height: 12rem;
+        }
+        
+        h3{
+            text-transform: uppercase;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
