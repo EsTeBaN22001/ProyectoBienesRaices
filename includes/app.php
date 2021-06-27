@@ -4,7 +4,7 @@ require 'funciones.php';
 require 'config/database.php';
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\ActiveRecord;
+use Model\ActiveRecord;
 
 // Conectarnos a las base de datos
 

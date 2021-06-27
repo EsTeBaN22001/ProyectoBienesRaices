@@ -1,19 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(){
-    eventListeners();
-
+    
     darkMode();
-
+    
+    eventListeners();
+    
     preloader();
-
-
 })
 
 function eventListeners(){
+    // Event listener para el botón de menú para dispositivos móviles
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.addEventListener('click', function() {
         const navegacion = document.querySelector('.navegacion');
         navegacion.classList.toggle('mostrar');
     });
+
+    // Muestra campos condicionales en el formulario de contacto
+    const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]');
+    metodoContacto.forEach(input => input.addEventListener('click', mostrarMetodoContacto));
 }
 
 function darkMode(){
@@ -44,4 +48,30 @@ function preloader(){
     const contenedorCarga = document.querySelector('.contenedor-carga');
 
     contenedorCarga.classList.add('hidden');
+}
+
+function mostrarMetodoContacto(e){
+    const contactoDiv = document.querySelector('#contacto');
+
+    contactoDiv.textContent = "Diste click";
+
+    if(e.target.value === 'telefono'){
+        contactoDiv.innerHTML = `
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" placeholder="Tu telefono" id="telefono" name="contacto[telefono]">
+
+            <label>Elija la fecha y hora para la llamada</label>
+
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="contacto[fecha]">
+
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]">
+        `;
+    }else{
+        contactoDiv.innerHTML = `
+            <label for="email">Email</label>
+            <input type="email" placeholder="Tu Email" id="email" name="contacto[email]" >
+        `;
+    }
 }
