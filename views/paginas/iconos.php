@@ -1,4 +1,4 @@
-<div class="iconos-nosotros seccion">
+<div class="iconos-nosotros seccion" data-cy="iconos-nosotros">
         <div class="icono">
             <img src="build/img/icono1.svg" alt="Icono seguridad">
             <h3>Seguridad</h3>
