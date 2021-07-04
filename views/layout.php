@@ -25,13 +25,13 @@
 
 <body>
 
-    <?php if ($inicio) { ?>
+    <!-- <?php if ($inicio) { ?>
 
         <div class="contenedor-carga">
             <div class="carga"></div>
         </div>
 
-    <?php } ?>
+    <?php } ?> -->
 
 
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
@@ -49,9 +49,9 @@
 
                 <div class="derecha">
                     <img src="/build/img/dark-mode.svg" alt="Icono de Dark Mode" class="dark-mode-boton">
-                    <nav class="navegacion">
+                    <nav data-cy="navegacion-header" class="navegacion">
                         <a href="/nosotros">Nosotros</a>
-                        <a href="/propiedades">Anuncios</a>
+                        <a href="/propiedades">Propiedades</a>
                         <a href="/blog">Blog</a>
                         <a href="/contacto">Contacto</a>
                         <?php if (!$auth) : ?>
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <?php echo $inicio ? "<h1>Venta de casas y departamentos exclusivos de lujo</h1>" : ""; ?>
+            <?php echo $inicio ? "<h1 data-cy='heading-sitio'>Venta de casas y departamentos exclusivos de lujo</h1>" : ""; ?>
 
         </div>
     </header>
@@ -76,15 +76,15 @@
 
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
-            <nav class="navegacion nav-footer">
+            <nav data-cy="navegacion-footer" class="navegacion nav-footer">
                 <a href="/nosotros">Nosotros</a>
-                <a href="/propiedades">Anuncios</a>
+                <a href="/propiedades">Propiedades</a>
                 <a href="/blog">Blog</a>
                 <a href="/contacto">Contacto</a>
             </nav>
         </div>
 
-        <p class="copyright">Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
+        <p data-cy="copyright" class="copyright">Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
     </footer>
 
     <script src="../build/js/bundle.js"></script>

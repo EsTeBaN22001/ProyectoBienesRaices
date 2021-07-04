@@ -76,8 +76,8 @@ class PaginasController{
             $mail->Port = 2525;
 
             // Configurar el contenido del email
-            $mail->setFrom('admin@bienesraices.com');
-            $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com');
+            $mail->setFrom('esteban1.redon2@gmail.com');
+            $mail->addAddress('esteban1.redon2@gmail.com', 'BienesRaices.com');
             $mail->Subject = 'Tienes un nuevo mensaje';
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
